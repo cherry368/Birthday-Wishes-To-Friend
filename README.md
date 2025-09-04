@@ -15,7 +15,8 @@ This project includes animations, colors, and creative effects to make birthdays
 ---
 
 ## 🚀 Live Demo
-🔗 [Click here to view the website](https://your-live-demo-link.com)  
+🔗 [Click here to view the website]([https://your-live-demo-link.com](https://cherry368.github.io/Birthday-Wishes-To-Friend/))  
+
 
 ---
 
