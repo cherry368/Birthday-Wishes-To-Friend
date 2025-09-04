@@ -21,7 +21,12 @@ This project includes animations, colors, and creative effects to make birthdays
 
 ## 📸 Preview
 ![Project Preview](assets/preview1.png)  
-
+![Project Preview](assets/preview2.png) 
+![Project Preview](assets/preview3.png) 
+![Project Preview](assets/preview4.png) 
+![Project Preview](assets/preview5.png) 
+![Project Preview](assets/preview6.png) 
+![Project Preview](assets/preview7.png) 
 
 
 ## 🛠️ How to Run Locally
