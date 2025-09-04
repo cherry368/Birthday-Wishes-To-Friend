@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Special Birthday Wish</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0; padding: 20px;
+      background: linear-gradient(135deg,#ffdde1,#ee9ca7,#fbc2eb,#a1c4fd);
+      font-family: 'Georgia', serif;
+      color: #47303f;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+      background-image: url('https://www.transparenttextures.com/patterns/pw-maze-white.png');
+      background-repeat: repeat;
+    }
+    
+    .paper-container {
+      background: #fff9f7;
+      max-width: 520px;
+      width: 90%;
+      padding: 40px 32px;
+      border-radius: 20px;
+      box-shadow: 0 6px 18px rgba(110,70,80,0.3);
+      border: 1.5px solid #eecfdd;
+      font-family: 'Dancing Script', cursive;
+      position: relative;
+      user-select: text;
+      color: #613a45;
+      font-size: 1.38rem;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      text-shadow:
+        0 0 1px #5a3942,
+        0 1px 1px #ac9c9c66;
+    }
+    h2 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 3.1rem;
+      font-weight: 700;
+      color: #924d67;
+      margin-bottom: 2rem;
+      user-select: text;
+      text-shadow: 0 0 12px #ffc4d9aa;
+    }
+    .letter-book {
+      position: relative;
+      padding: 0 12px;
+      text-align: left;
+      min-height: 240px;
+      background:
+        repeating-linear-gradient(
+          to bottom,
+          transparent,
+          transparent 1.4em,
+          #d7a6b8 1.5em
+        );
+      user-select: text;
+    }
+    .letter-page {
+      display: none;
+      white-space: pre-line;
+      font-weight: 500;
+      font-family: 'Dancing Script', cursive;
+      padding: 0 4px;
+      border-left: 4px solid #d7a6b8;
+      color: #6c4554;
+      letter-spacing: 0.02em;
+      font-size: 1.3rem;
+      line-height: 1.85;
+      background: transparent;
+      margin-bottom: -1.5em; /* Overlap with background lines */
+    }
+    .letter-page.active {
+      display: block;
+      animation: fadeIn 0.7s ease;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(12px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    .book-controls {
+      margin-top: 32px;
+      display: flex;
+      justify-content: space-between;
+      max-width: 280px;
+      margin-left: auto;
+      margin-right: auto;
+      user-select: none;
+    }
+    .book-controls button {
+      font-family: 'Dancing Script', cursive;
+      padding: 12px 28px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      border-radius: 30px;
+      border: 2px solid #a96c86;
+      cursor: pointer;
+      background: #ffdcec;
+      color: #813d57;
+      box-shadow: 0 0 16px #d37ca9ad;
+      transition: background 0.3s ease, transform 0.3s ease;
+      user-select: none;
+    }
+    .book-controls button:disabled {
+      opacity: 0.5;
+      cursor: default;
+      box-shadow: none;
+      background: #ffecf2;
+    }
+    .book-controls button:hover:not(:disabled) {
+      background: #ffa7c1;
+      box-shadow: 0 0 24px #c25b8dcc;
+      transform: scale(1.07);
+    }
+    @media (max-width: 480px) {
+      .paper-container {
+        max-width: 95%;
+        padding: 28px 20px;
+        font-size: 1.1rem;
+      }
+      h2 {
+        font-size: 2.4rem;
+      }
+      .book-controls {
+        max-width: 100%;
+      }
+      .book-controls button {
+        padding: 10px 24px;
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="paper-container" role="main" aria-label="Handwritten birthday wish letter">
+    <h2>Your Special Birthday Wish 🎉</h2>
+    <div class="letter-book" aria-live="polite">
+      <div id="letterPage1" class="letter-page active"></div>
+      <div id="letterPage2" class="letter-page"></div>
+    </div>
+    <div class="book-controls" role="group" aria-label="Page navigation">
+      <button id="prevPageBtn" disabled aria-disabled="true">Previous</button>
+      <button id="nextPageBtn">Next</button>
+    </div>
+  </div>
+
+  <script>
+    const page1Text = `
+Dear You, 🥰
+
+On this magical day, I just want to wrap you in words and remind you how special you are to me. You bring light into rooms, calm into storms, and a smile that quietly fixes everything ✨
+
+The way we used to be in diploma college is something so special. You don’t even know how much you helped me in studies — whenever I got stuck, you were the first person I thought of 📚🤝. Your patience, your way of explaining... it made a bigger difference than you realize.
+
+Maybe you remember that day you said, "Let’s go and marry now" — of course, just for fun... but I loved that moment 😂💞 The way we laughed, teased, and cared — little treasures I still carry.
+    `.trim();
+
+    const page2Text = `
+I don’t know what the future holds, but you’ll always have a special place in me 💗
+
+Actually, you might be thinking I forgot your birthday… but how could I forget this day? I prepared this special gift 🎁⏳
+
+No matter how you treat me or what you feel, I want you to always be happy and cheerful 🌈 If you’re ever bored, or feel alone — I’ll be there 🤍
+
+Some people lost you without knowing your value… we only realize the worth of something when we lose it. When we drifted apart, I felt how good we were — maybe more than you think 🫶
+
+So here’s my brave little confession... I have a sweet, growing crush on you — not just for your beauty, but for your heart, courage, and kindness 🌤️💫
+
+Happiest birthday! May your days be filled with safe love, flying dreams, and glowing joy. And if you ever wonder who’s quietly cheering for you — it’s me. Always.
+
+With all my heart,
+MV the Dreamer 💖
+    `.trim();
+
+    document.getElementById('letterPage1').textContent = page1Text;
+    document.getElementById('letterPage2').textContent = page2Text;
+
+    const prevBtn = document.getElementById('prevPageBtn');
+    const nextBtn = document.getElementById('nextPageBtn');
+    const letterPage1 = document.getElementById('letterPage1');
+    const letterPage2 = document.getElementById('letterPage2');
+
+    prevBtn.disabled = true;
+    nextBtn.disabled = false;
+
+    prevBtn.addEventListener('click', () => {
+      letterPage1.classList.add('active');
+      letterPage2.classList.remove('active');
+      prevBtn.disabled = true;
+      nextBtn.disabled = false;
+    });
+
+    nextBtn.addEventListener('click', () => {
+      letterPage2.classList.add('active');
+      letterPage1.classList.remove('active');
+      prevBtn.disabled = false;
+      nextBtn.disabled = true;
+    });
+  </script>
+</body>
+</html>
